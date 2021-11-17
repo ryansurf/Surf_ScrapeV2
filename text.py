@@ -3,10 +3,17 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 def send_text(data):
-    email = "todayssurfreport@gmail.com"
-    pas = "Deeznuts44!"
+    #Rememebr to go into Gmail's security settign and turn less secure apps ON!
+    # https://support.google.com/accounts/answer/6010255?hl=en#zippy=  #See this link for support
+    email = "YourEmail@gmail.com"
+    pas = "YourPassword"
 
-    sms_gateway = '8583348841@tmomail.net'
+    sms_gateway = 'YourPhoneNumber@CellPhoneProvidor' #Replace this with your carrier's gateway below
+    #AT&T: [number]@txt.att.net
+    #Sprint: [number]@messaging.sprintpcs.com
+    #T-Mobile: [number]@tmomail.net
+    #Verizon:[number]@vtext.com
+
     # The server we use to send emails in our case it will be gmail but every email provider has a different smtp
     # and port is also provided by the email provider.
     smtp = "smtp.gmail.com"
