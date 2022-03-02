@@ -5,8 +5,8 @@ from meters_to_feet import m_to_f
 import re
 
 def get_data():
-    page = requests.get("Magic Seaweed surfspot URL of your choice(copy/paste link below to see what page should be")
-    #page = requests.get("https://magicseaweed.com/Pleasure-Point-Surf-Report/644/")            #Example, Sends requests to website server
+    #page = requests.get("Magic Seaweed surfspot URL of your choice(copy/paste link below to see what page should be")
+    page = requests.get("https://magicseaweed.com/Pleasure-Point-Surf-Report/644/")            #Example, Sends requests to website server
     soup = BeautifulSoup(page.content, 'html.parser')
 
     surf_height = soup.find(class_ = 'rating-text text-dark')                                   #Surf height contained in this class
@@ -36,13 +36,16 @@ def get_data():
     tide1 = tides[3] + ' ' + tides[4] + ' ' + str(m_to_f(tides[5])) + ' ' + 'Feet'
     tide2 = tides[6] + ' ' + tides[7] + ' ' + str(m_to_f(tides[8])) + ' ' + 'Feet'
 
+    data_list = list()
     return (
-        f'Surf height: {surf_height}\n'
-        f'{primary_swell}\n'
-        f'Air temp: {air_temp}\n'
-        f'Sea temp: {sea_temp}\n'
-        f'{tide1}\n'
-        f'{tide2}\n'
+        surf_height, primary_swell, air_temp, sea_temp, tide1, tide2
+        #f'Surf height: {surf_height}\n'
+        #f'{primary_swell}\n'
+        #f'Air temp: {air_temp}\n'
+        #f'Sea temp: {sea_temp}\n'
+        #f'{tide1}\n'
+        #'{tide2}\n
+
 
     )
 

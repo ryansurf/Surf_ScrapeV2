@@ -5,10 +5,12 @@ from email.mime.multipart import MIMEMultipart
 def send_text(data):
     #Remember to go into Gmail's security settings and turn less secure apps ON!
     # https://support.google.com/accounts/answer/6010255?hl=en#zippy=  #See this link for support
-    email = "YourEmail@gmail.com"
-    pas = "YourPassword"
+    #email = "YourEmail@gmail.com"
+    email = "todayssurfreport@gmail.com"
+    pas = "Deeznuts44!"
 
-    sms_gateway = 'YourPhoneNumber@CellPhoneProvidor' #Replace this with your carrier's gateway, listed below
+    #sms_gateway = 'YourPhoneNumber@CellPhoneProvidor' #Replace this with your carrier's gateway, listed below
+    sms_gateway = '8583348841@tmomail.net'
     #AT&T: [number]@txt.att.net
     #Sprint: [number]@messaging.sprintpcs.com
     #T-Mobile: [number]@tmomail.net
