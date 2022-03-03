@@ -8,4 +8,3 @@ data = get_data()
 textString = database_commit(data)
 
 send_text(textString)
-

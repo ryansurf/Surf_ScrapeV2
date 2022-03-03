@@ -17,7 +17,8 @@ def get_data():
     primary_swell = swell_temp_data[0].get_text().strip()
 
     #This section gives us our air and sea temperatures
-    temp = swell_temp_data[3].get_text().strip()                                                #Both air and water temp
+    temp = swell_temp_data[2].get_text().strip()
+    #temp = swell_temp_data[3].get_text().strip() #Both air and water temp
     temp = temp.split()                                                                         #Puts elements in temp into list so we can extract temp
     tempL = []                                                                                  #Put temps in list
     for e in temp:

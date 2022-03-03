@@ -1,9 +1,12 @@
 from datetime import date
 import sqlite3
+from celcius_to_f import c_to_f
 
 def database_commit(data):
-    air_temp = (float(data[2]) * (9 / 5) + 32)
-    sea_temp = (float(data[3]) * (9 / 5) + 32)
+    air_temp = data[2]
+    #air_temp = (float(data[2]) * (9 / 5) + 32)
+    #sea_temp = (float(data[3]) * (9 / 5) + 32)
+    sea_temp = data[3]
     #textData is our text string to send via sms that has the compiled surf report
     textData = f'Surf height: {data[0]}\n' + f'{data[1]}\n' + f'Air temp: {air_temp}\n' + f'Sea temp: {sea_temp}\n' + f'{data[4]}\n' + f'{data[5]}\n'
 
@@ -33,10 +36,10 @@ def database_commit(data):
     cur = conn.cursor()
     try:
         cur.execute(
-            'CREATE TABLE SURF (height INT, water_temp INT, sea_temp INT, high_tide INT, low_tide INT, date TEXT)')
+            'CREATE TABLE SURF (height INT, water_temp INT, air_temp INT, high_tide INT, low_tide INT, date TEXT)')
     except sqlite3.OperationalError:
         pass
-    cur.execute('INSERT INTO SURF (height, water_temp, sea_temp, high_tide, low_tide, date) values (?, ?, ?, ?, ?, ?)',
+    cur.execute('INSERT INTO SURF (height, water_temp, air_temp, high_tide, low_tide, date) values (?, ?, ?, ?, ?, ?)',
                 (height_avg, sea_temp, air_temp, high_tide, low_tide, todaysDate))
     conn.commit()
 
