@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 
 def send_text(data):
     #Remember to go into Gmail's security settings and turn less secure apps ON!
-    # https://support.google.com/accounts/answer/6010255?hl=en#zippy=  #See this link for support
+    #https://support.google.com/accounts/answer/6010255?hl=en#zippy=  #See this link for support
     #email = "YourEmail@gmail.com"
     #pas = "Your password!"
 

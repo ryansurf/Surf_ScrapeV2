@@ -32,7 +32,7 @@ def database_commit(data):
     todaysDate = today.strftime("%d/%m/%Y")
 
     # Start data table code
-    conn = sqlite3.connect('SURF_db.sqlite')
+    conn = sqlite3.connect('Make a database and copy the entire(absolute) path, put it in this string')
     cur = conn.cursor()
     try:
         cur.execute(

@@ -47,7 +47,6 @@ def get_data():
         #f'{tide1}\n'
         #'{tide2}\n
 
-
     )
 
 
